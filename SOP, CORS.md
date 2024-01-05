@@ -93,6 +93,7 @@ The server did not receive any request:
 ```javascript
 mode: 'no-cors'
 ```
+![Screenshot 2024-01-05 144902](https://github.com/VarshaChahal/SameOriginPolicy_tests/assets/17961153/67890a08-aa88-489d-9f4f-f5f3f8e78353)
 
 No preflight request is sent.
 server returns 200 status code.
