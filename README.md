@@ -65,7 +65,7 @@ The server received the request:
 ![Pasted image 20231102224023](https://github.com/VarshaChahal/SameOriginPolicy_experiments/assets/17961153/928737f6-be35-42c8-8ff1-d58a134c378b)
 
 
-Browser CORS error: it says the fetch failed. The request reached the server though. That should be enough for my CSRF attack.
+Browser CORS error: it says the fetch failed. The request reached the server though. That should be enough for the CSRF attack.
 ![Pasted image 20231102223707](https://github.com/VarshaChahal/SameOriginPolicy_experiments/assets/17961153/95c7d296-f621-4c42-a7f9-5c3d3050aff1)
 
 
