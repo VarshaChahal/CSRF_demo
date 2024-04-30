@@ -32,3 +32,4 @@ NOTE:This configuration includes ssl configuration as we plan to serve the appli
 - Link the custom configuration file: `sudo ln -s /etc/nginx/sites-available/nginx-config /etc/nginx/sites-enabled/`
 - Test configuration file syntax: `sudo nginx -t`
 - Restart nginx: `sudo systemctl restart nginx`
+Reference: https://phoenixnap.com/kb/nginx-reverse-proxy
