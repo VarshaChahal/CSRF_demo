@@ -16,8 +16,8 @@ server {
 
     server_name demo_app.local;
 
-    ssl_certificate /home/kali/csrf_demo/nginx-certs/kali-nginx.crt;
-    ssl_certificate_key /home/kali/csrf_demo/nginx-certs/kali-nginx.key;
+    ssl_certificate /<path>/nginx-certs/nginx-cert.crt;
+    ssl_certificate_key /<path>/nginx-certs/nginx-cert.key;
 
     location /api/ {
         proxy_pass https://127.0.0.1:5000;
@@ -27,9 +27,15 @@ server {
     }
 }
 ```
-NOTE:This configuration includes ssl configuration as we plan to serve the applications over https. You can make it more secure by configuring the reverse proxy to redirect all http traffic to https.
+NOTE: This configuration includes ssl configuration as we plan to serve the applications over https. You can make it more secure by configuring the reverse proxy to redirect all http traffic to https.
 
 - Link the custom configuration file: `sudo ln -s /etc/nginx/sites-available/nginx-config /etc/nginx/sites-enabled/`
 - Test configuration file syntax: `sudo nginx -t`
 - Restart nginx: `sudo systemctl restart nginx`
 Reference: https://phoenixnap.com/kb/nginx-reverse-proxy
+
+Commands to generate self-signed certificates:
+`openssl req -x509 -nodes -new -sha256 -days 1024 -newkey rsa:2048 -keyout nginx-cert.key -out nginx-cert.pem
+openssl x509 -outform pem -in nginx-cert.pem -out nginx-cert.crt `
+
+NOTE: Do not use self-signed certificates in production.
