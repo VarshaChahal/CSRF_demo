@@ -18,7 +18,7 @@ app.use(methodOverride('_method', { methods: ['POST', 'GET','PUT','PATCH'] }));
 app.use(methodOverride('X-HTTP-Method-Override', { methods: ['POST', 'GET','PUT','PATCH'] }));
 
 app.post('/api/change-email', (req, res) => {
-    console.log("Requesting URL: ",req.get('origin'));
+    console.log("Requesting URL: ",req.get('origin')); //Be careful when handling Origin for other logic, it can be manipulated in other kinds of attacks
     console.log("Request body received: ",req.body);
     console.log("Cookies received: ",req.headers.cookie);
 
