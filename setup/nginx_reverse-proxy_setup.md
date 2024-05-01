@@ -27,7 +27,7 @@ server {
     }
 }
 ```
-NOTE: This configuration includes ssl configuration as we plan to serve the applications over https. You can make it more secure by configuring the reverse proxy to redirect all http traffic to https.
+<strong>NOTE: This configuration includes ssl configuration as we plan to serve the applications over https. You can make it more secure by configuring the reverse proxy to redirect all http traffic to https.</strong>
 
 - Link the custom configuration file: `sudo ln -s /etc/nginx/sites-available/nginx-config /etc/nginx/sites-enabled/`
 - Test configuration file syntax: `sudo nginx -t`
@@ -38,4 +38,4 @@ Commands to generate self-signed certificates:
 `openssl req -x509 -nodes -new -sha256 -days 1024 -newkey rsa:2048 -keyout nginx-cert.key -out nginx-cert.pem
 openssl x509 -outform pem -in nginx-cert.pem -out nginx-cert.crt `
 
-NOTE: Do not use self-signed certificates in production.
+<strong>NOTE: Do not use self-signed certificates in production.</strong>
