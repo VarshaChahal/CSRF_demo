@@ -22,6 +22,9 @@ app.post('/api/change-email', (req, res) => {
     console.log("Request body received: ",req.body);
     console.log("Cookies received: ",req.headers.cookie);
 
-    res.cookie('session','test_session',{httpOnly: true, secure: true, sameSite: None});
+    //set the cookie only for demo_app.local origin only
+    if(req.get('origin')==="https://demo_app.local"){  //NOTE: For demonstration only, DO NOT use Origin in critical logic like this.
+    	 res.cookie('session','test_session',{httpOnly: true, secure: true});
+    }
     res.status(200).send({message:"Email updated successfully!"});
   }) ;
