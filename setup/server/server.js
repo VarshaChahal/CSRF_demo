@@ -22,6 +22,6 @@ app.post('/api/change-email', (req, res) => {
     console.log("Request body received: ",req.body);
     console.log("Cookies received: ",req.headers.cookie);
 
-    res.cookie('session','test_session',{httpOnly: true, secure: true});
+    res.cookie('session','test_session',{httpOnly: true, secure: true, sameSite: None});
     res.status(200).send({message:"Email updated successfully!"});
   }) ;
